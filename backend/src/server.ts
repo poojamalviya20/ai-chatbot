@@ -17,7 +17,9 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api', chatRoutes);
 
-sequelize.sync({ alter: true }).then(() => {
-  console.log('DB connected & synced');
-  app.listen(5000, () => console.log('Server on port 5000'));
-});
+sequelize.authenticate()
+  .then(() => {
+    console.log('DB connected');
+    app.listen(5000, () => console.log('Server on port 5000'));
+  })
+  .catch(err => console.error('DB connection failed:', err));

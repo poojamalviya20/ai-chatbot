@@ -18,6 +18,7 @@
 }
 
 .login-title {
+  text-align: center;
   color: #ffffff;
   margin-bottom: 24px;
   font-size: 24px;
@@ -80,4 +81,59 @@
 
 .login-footer a:hover {
   color: #ffffff;
+}
+
+/* ---- naye classes add karo ---- */
+.login-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.login-remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.login-remember input[type="checkbox"] {
+  accent-color: #7c3aed;
+  cursor: pointer;
+}
+
+.login-forgot {
+  color: #7c3aed;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.login-forgot:hover {
+  text-decoration: underline;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.input-wrapper .login-input {
+  width: 100%;
+  margin-bottom: 0;
+  padding-right: 42px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  color: #888;
 }

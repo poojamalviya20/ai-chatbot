@@ -79,3 +79,13 @@ export const getMessages = async (
     order: [['createdAt', 'ASC']],
   });
 };
+
+export const deleteConversation = async (convId: number, userId: number) => {
+  const conv = await Conversation.findOne({ where: { id: convId, userId } });
+  if (!conv) throw new Error('Conversation not found');
+
+  await Message.destroy({ where: { conversationId: convId } });
+  await conv.destroy();
+
+  return { message: 'Deleted successfully' };
+};

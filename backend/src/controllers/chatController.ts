@@ -70,3 +70,12 @@ export const getMessages = async (
     });
   }
 };
+
+export const deleteConversation = async (req: AuthRequest, res: Response) => {
+  try {
+    const result = await chatService.deleteConversation(parseInt(req.params.id as string), req.userId!);
+    res.json(result);
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+};
